@@ -1,9 +1,9 @@
 import React from "react";
-import { useStateContext } from "../context/ContextProvider";
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { MdOutlineCancel } from "react-icons/md";
+import { useStateContext } from "../context/ContextProvider";
 import { links } from "../data/dummy";
 
 const Sidebar = () => {

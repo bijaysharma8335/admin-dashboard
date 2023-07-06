@@ -5,13 +5,11 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { useStateContext } from "../context/ContextProvider";
 import avatar from "../data/avatar.jpg";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import Cart from "./Cart";
-import Chat from "./Chat";
-import Notification from "./Notification";
-import UserProfile from "./UserProfile";
+
+import { Cart, Chat, Notification, UserProfile } from ".";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
     <TooltipComponent content={title} position="BottomCenter">

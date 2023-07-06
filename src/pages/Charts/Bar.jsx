@@ -1,6 +1,4 @@
 import React from "react";
-import { useStateContext } from "../../context/ContextProvider";
-import ChartsHeader from "../../components/ChartsHeader";
 import {
     ChartComponent,
     SeriesCollectionDirective,
@@ -12,6 +10,9 @@ import {
     ColumnSeries,
     DataLabel,
 } from "@syncfusion/ej2-react-charts";
+import { useStateContext } from "../../context/ContextProvider";
+import ChartsHeader from "../../components/ChartsHeader";
+
 import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from "../../data/dummy";
 
 const Bar = () => {

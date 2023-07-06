@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { FiSettings } from "react-icons/fi";
-import Footer from "./components/Footer";
+
 import { useStateContext } from "./context/ContextProvider";
-import ThemeSettings from "./components/ThemeSettings";
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
+import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import "./App.css";
 import {
     Ecommerce,
@@ -49,7 +47,7 @@ const App = () => {
         <div className={currentMode === "Dark" ? "dark" : ""}>
             <BrowserRouter>
                 <div className="flex relative dark:bg-main-dark-bg">
-                    <div className="fixed right-4 bottom-4 " style={{ zIndex: 1000 }}>
+                    <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
                         <TooltipComponent content="Settings" position="Top">
                             <button
                                 type="button"
@@ -82,6 +80,7 @@ const App = () => {
                         </div>
                         <div>
                             {themeSettings && <ThemeSettings />}
+
                             <Routes>
                                 {/* dashboard  */}
                                 <Route path="/" element={<Ecommerce />} />
@@ -109,10 +108,9 @@ const App = () => {
                                 <Route path="/stacked" element={<Stacked />} />
                             </Routes>
                         </div>
+                        <Footer />
                     </div>
                 </div>
-
-                <Footer />
             </BrowserRouter>
         </div>
     );

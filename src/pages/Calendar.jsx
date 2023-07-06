@@ -18,17 +18,24 @@ import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import Header from "../components/Header";
 import { scheduleData } from "../data/dummy";
 
+// eslint-disable-next-line react/destructuring-assignment
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
-const Calendar = () => {
-    const [scheduleObj, setScheduleObj] = useState();
-    const onChangeHandler = (args) => {
-        scheduleObj.selctedDate = args.value;
-        scheduleObj.dataBind();
+const Scheduler = () => {
+    const [scheduleObj, setScheduleObj] = useState(null);
+
+    const change = (args) => {
+        if (scheduleObj) {
+            scheduleObj.selectedDate = args.value;
+            scheduleObj.dataBind();
+          }
     };
+
     const onDragStart = (arg) => {
         // eslint-disable-next-line no-param-reassign
-        arg.navigation.enable = true;
+        if (scheduleObj) {
+            arg.navigation.enable = true;
+          }
     };
 
     return (
@@ -37,13 +44,13 @@ const Calendar = () => {
             <ScheduleComponent
                 height="650px"
                 ref={(schedule) => setScheduleObj(schedule)}
-                selectedDate={new Date(2023, 1, 20)}
+                selectedDate={new Date(2021, 0, 10)}
                 eventSettings={{ dataSource: scheduleData }}
                 dragStart={onDragStart}
             >
                 <ViewsDirective>
-                    {["Day", "Week", "Month", "Agenda"].map((item) => (
-                        <ViewDirective ikey={item} option={item} />
+                    {["Day", "Week", "WorkWeek", "Month", "Agenda"].map((item) => (
+                        <ViewDirective key={item} option={item} />
                     ))}
                 </ViewsDirective>
                 <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
@@ -54,11 +61,11 @@ const Calendar = () => {
                         <tr style={{ height: "50px" }}>
                             <td style={{ width: "100%" }}>
                                 <DatePickerComponent
-                                    value={new Date(2023, 1, 20)}
+                                    value={new Date(2021, 0, 10)}
                                     showClearButton={false}
                                     placeholder="Current Date"
                                     floatLabelType="Always"
-                                    change={onChangeHandler}
+                                    change={change}
                                 />
                             </td>
                         </tr>
@@ -69,4 +76,4 @@ const Calendar = () => {
     );
 };
 
-export default Calendar;
+export default Scheduler;
