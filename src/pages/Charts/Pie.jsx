@@ -1,5 +1,5 @@
 import React from "react";
-import ChartsHeader from "../../components/ChartsHeader";
+import { ChartsHeader, Pie as PieChart } from "../../components";
 import { pieChartData } from "../../data/dummy";
 
 const Pie = () => (
