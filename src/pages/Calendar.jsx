@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
+
 import {
     ScheduleComponent,
     ViewsDirective,
@@ -11,10 +11,12 @@ import {
     Month,
     Agenda,
     Resize,
-    DragDrop,
+    DragAndDrop,
 } from "@syncfusion/ej2-react-schedule";
-import { scheduleData } from "../data/dummy";
+
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+import Header from "../components/Header";
+import { scheduleData } from "../data/dummy";
 
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
@@ -44,7 +46,7 @@ const Calendar = () => {
                         <ViewDirective ikey={item} option={item} />
                     ))}
                 </ViewsDirective>
-                <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragDrop]} />
+                <Inject services={[Day, Week, WorkWeek, Month, Agenda, Resize, DragAndDrop]} />
             </ScheduleComponent>
             <PropertyPane>
                 <table style={{ width: "100%", background: "white" }}>

@@ -1,13 +1,14 @@
 import React from "react";
 
 import {
-    Inject,
     HtmlEditor,
+    Image,
+    Inject,
     Link,
-    Toolbar,
-    RichTextEditorComponent,
     QuickToolbar,
-} from "@syncfusion/ej2-react-dropdowns";
+    RichTextEditorComponent,
+    Toolbar,
+} from "@syncfusion/ej2-react-richtexteditor";
 import { EditorData } from "../data/dummy";
 import Header from "../components/Header";
 

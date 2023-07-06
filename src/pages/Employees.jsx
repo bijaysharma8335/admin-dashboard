@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
 import {
     GridComponent,
+    Inject,
     ColumnsDirective,
     ColumnDirective,
     Search,
     Page,
-    Inject,
 } from "@syncfusion/ej2-react-grids";
+import Header from "../components/Header";
 import { employeesData, employeesGrid } from "../data/dummy";
 
 const Employees = () => {
@@ -38,5 +38,4 @@ const Employees = () => {
         </div>
     );
 };
-
 export default Employees;
