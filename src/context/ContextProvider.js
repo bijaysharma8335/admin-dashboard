@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
@@ -33,15 +33,15 @@ export const ContextProvider = ({ children }) => {
         // eslint-disable-next-line react/jsx-no-constructed-context-values
         <StateContext.Provider
             value={{
-                screenSize,
                 currentColor,
                 currentMode,
                 activeMenu,
+                screenSize,
+                setScreenSize,
                 handleClick,
                 isClicked,
                 initialState,
                 setIsClicked,
-                setScreenSize,
                 setActiveMenu,
                 setCurrentColor,
                 setCurrentMode,

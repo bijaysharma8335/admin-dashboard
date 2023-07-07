@@ -15,7 +15,8 @@ import ChartsHeader from "../../components/ChartsHeader";
 import { FinancialPrimaryXAxis, FinancialPrimaryYAxis, financialChartData } from "../../data/dummy";
 import { useStateContext } from "../../context/ContextProvider";
 
-const date1 = new Date("2021, 1, 1");
+const date1 = new Date("2017, 1, 1");
+
 // eslint-disable-next-line consistent-return
 function filterValue(value) {
     if (value.x >= date1) {
