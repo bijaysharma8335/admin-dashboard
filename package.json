@@ -1,7 +1,7 @@
 {
     "name": "admin-dashboard",
     "version": "0.1.0",
-    "homepage": "https://github.com/bijaysharma8335/admin-dashboard",
+    "homepage": "https://bijaysharma8335.github.io/admin-dashboard",
     "private": true,
     "dependencies": {
         "@syncfusion/ej2": "^19.4.48",
